@@ -15,10 +15,12 @@ class LED:
         GPIO.setup(self.pin, GPIO.OUT)
 
     def on(self):
-        GPIO.output(self.pin, GPIO.HIGH)
+        if GPIO.input(self.pin) == 0:
+            GPIO.output(self.pin, GPIO.HIGH)
 
     def off(self):
-        GPIO.output(self.pin, GPIO.LOW)
+        if GPIO.input(self.pin) == 1:
+            GPIO.output(self.pin, GPIO.LOW)
 
     def toggle(self):
         if GPIO.input(self.pin) == 0:
@@ -27,6 +29,7 @@ class LED:
             self.off()
 
     def blink(self, duration):
+        GPIO.output(self.pin, GPIO.LOW)
         for i in range(int(duration)):
             self.on()
             t.sleep(0.5)
