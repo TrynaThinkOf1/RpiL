@@ -6,11 +6,10 @@ import time as t
 GPIO.setmode(GPIO.BCM)
 
 class LED:
-    def __init__(self, pin, duration=0):
+    def __init__(self, pin):
         """This uses GPIO pin-number on the pi.\n
         This class is for controlling basic LED's."""
         self.pin = int(pin)
-        self.duration = int(duration)
 
         GPIO.setup(self.pin, GPIO.OUT)
 
@@ -28,7 +27,7 @@ class LED:
         else:
             self.off()
 
-    def blink(self, duration):
+    def blink(self, duration=6):
         GPIO.output(self.pin, GPIO.LOW)
         for i in range(int(duration)):
             self.on()
@@ -37,4 +36,5 @@ class LED:
             t.sleep(0.5)
 
     def __del__(self):
+        GPIO.output(self.pin, GPIO.LOW)
         GPIO.cleanup(self.pin)
