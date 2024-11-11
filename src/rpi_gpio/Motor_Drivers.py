@@ -4,7 +4,7 @@ import Rpi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 
-class L298N:
+class Motor_Driver:
     def __init__(self, in1=0, in2=0, ena=0, in3=0, in4=0, enb=0):
         """This uses GPIO pin-number on the pi.\n
         This class is for the L298N Motor Driver"""
@@ -89,5 +89,3 @@ class L298N:
     def __del__(self):
         self.stop()
         GPIO.cleanup(self.in1, self.in2, self.ena, self.in3, self.in4, self.enb)
-
-#WILL ADD MORE MOTOR DRIVER OPTIONS IN THE FUTURE
