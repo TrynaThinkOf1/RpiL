@@ -1,7 +1,8 @@
 # RpiL/buzzer
 
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time as t
+import threading
 
 GPIO.setmode(GPIO.BCM)
 

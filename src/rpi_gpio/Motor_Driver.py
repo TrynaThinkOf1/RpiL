@@ -1,6 +1,7 @@
 # RpiL/Motor_Driver
 
-import Rpi.GPIO as GPIO
+import RPi.GPIO as GPIO
+import threading
 
 GPIO.setmode(GPIO.BCM)
 

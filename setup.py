@@ -5,7 +5,7 @@ setup(
     version="0.1.0",  # Version
     packages=find_packages(where="src"),  # Automatically find packages in 'src'
     package_dir={"": "src"},  # Tell setuptools where your package is
-    install_requires=["RPi.GPIO"],  # List of dependencies
+    install_requires=["RPi.GPIO, time, threading"],  # List of dependencies
     description="Library for controlling Raspberry Pi hardware. CAN ONLY BE INSTALLED ON RASPBERRY PI (due to Rpi.GPIO dependency).",
     author="Zevi Berlin",
     author_email="zeviberlin@gmail.com",
