@@ -88,4 +88,4 @@ class Motor_Driver:
 
     def __del__(self):
         self.stop()
-        GPIO.cleanup(self.in1, self.in2, self.ena, self.in3, self.in4, self.enb)
+        GPIO.cleanup([self.in1, self.in2, self.ena, self.in3, self.in4, self.enb])

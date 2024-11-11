@@ -35,4 +35,4 @@ class pin:
     def value(self):
         """Return the gpio pin state (on/off, 1/0)."""
         if self.mode == GPIO.IN:
-            return GPIO.input(self.pin)
+            return GPIO.input([self.pin])

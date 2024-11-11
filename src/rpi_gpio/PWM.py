@@ -42,4 +42,4 @@ class PWM:
 
     def __del__(self):
         self.stop()
-        GPIO.cleanup(self.pin)
+        GPIO.cleanup([self.pin])

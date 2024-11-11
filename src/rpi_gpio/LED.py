@@ -49,4 +49,4 @@ class LED:
         GPIO.output(self.pin, GPIO.LOW)
         if self.led_thread and self.led_thread.is_alive():
             self.led_thread.join()
-        GPIO.cleanup(self.pin)
+        GPIO.cleanup([self.pin])

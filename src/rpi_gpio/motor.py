@@ -27,4 +27,4 @@ class motor:
         GPIO.output(self.backward_pin, GPIO.LOW)
 
     def __del__(self):
-        GPIO.cleanup(self.forward_pin, self.backward_pin)
+        GPIO.cleanup([self.forward_pin, self.backward_pin])

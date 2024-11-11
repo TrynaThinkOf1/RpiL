@@ -13,5 +13,32 @@ class USDS:
         self.trig = trig
         self.echo = echo
 
-        GPIO.setup(self.trig, GPIO.IN)
+        GPIO.setup(self.trig, GPIO.OUT)
         GPIO.setup(self.echo, GPIO.IN)
+
+        self.distance_thread = None
+
+    def distance(self):
+        """Measures distance in cm"""
+        GPIO.output(self.trig, GPIO.LOW)
+        t.sleep(0.5)
+
+        GPIO.output(self.trig, GPIO.HIGH)
+        t.sleep(0.00001)
+        GPIO.output(self.trig, GPIO.LOW)
+
+        start = t.time()
+        while GPIO.input(self.echo) == 0:
+            start = t.time()
+
+        stop = t.time()
+        while GPIO.input(self.echo) == 1:
+            stop = t.time()
+
+        elapsed = stop - start
+        distance_ = (elapsed * 34300) / 2
+
+        return distance_
+
+    def __del__(self):
+        GPIO.cleanup([self.trig, self.echo])
