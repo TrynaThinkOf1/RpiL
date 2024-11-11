@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="RpiL",  # Package name
-    version="0.1.1",  # Version
+    version="0.1.2",  # Version
     packages=find_packages(where="src"),  # Automatically find packages in 'src'
     package_dir={"": "src"},  # Tell setuptools where your package is
     install_requires=["RPi.GPIO"],  # List of dependencies (only external packages)
