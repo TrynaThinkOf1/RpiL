@@ -12,6 +12,8 @@ class LED:
         This class is for controlling basic LED's."""
         self.pin = int(pin)
 
+        self.led_thread = None
+
         GPIO.setup(self.pin, GPIO.OUT)
 
     def on(self):
@@ -28,7 +30,7 @@ class LED:
         else:
             self.off()
 
-    def blink(self, duration=6):
+    def blink_sequence(self, duration=6):
         GPIO.output(self.pin, GPIO.LOW)
         for i in range(int(duration)):
             self.on()
@@ -36,6 +38,15 @@ class LED:
             self.off()
             t.sleep(0.5)
 
+    def blink(self, duration=6):
+        if self.led_thread and self.led_thread.is_alive():
+            self.led_thread.join()
+
+        self.led_thread = threading.Thread(target=self.blink_sequence, args=(duration,))
+        self.led_thread.start()
+
     def __del__(self):
         GPIO.output(self.pin, GPIO.LOW)
+        if self.led_thread and self.led_thread.is_alive():
+            self.led_thread.join()
         GPIO.cleanup(self.pin)

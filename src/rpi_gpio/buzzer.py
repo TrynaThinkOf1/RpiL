@@ -12,6 +12,8 @@ class buzzer:
     def __init__(self, pin):
         self.pin = pin
 
+        self.beep_thread = None
+
         GPIO.setup(pin, GPIO.OUT)
 
     def on(self):
@@ -28,7 +30,7 @@ class buzzer:
         else:
             self.off()
 
-    def beep(self, duration):
+    def beep_sequence(self, duration):
         GPIO.output(self.pin, GPIO.LOW)
         for i in range(int(duration)):
             self.on()
@@ -36,6 +38,16 @@ class buzzer:
             self.off()
             t.sleep(0.5)
 
+    def beep(self, duration):
+        """Uses threads to make Beep() a non-blocking function"""
+        if self.beep_thread and self.beep_thread.is_alive():
+            self.beep_thread.join()
+
+        self.beep_thread = threading.Thread(target=self.beep_sequence, args=(duration,))
+        self.beep_thread.start()
+
     def __del__(self):
         GPIO.output(self.pin, GPIO.LOW)
+        if self.beep_thread and self.beep_thread.is_alive():
+            self.beep_thread.join()
         GPIO.cleanup(self.pin)

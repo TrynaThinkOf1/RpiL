@@ -1,5 +1,3 @@
-# RpiL/RGB_LED
-
 import RPi.GPIO as GPIO
 import time as t
 import threading
@@ -25,6 +23,7 @@ class RGB_LED:
         self.blue_pwm.start(0)
 
         self.running = False
+        self.rainbow_thread = None
 
     def set_color(self, hex_color):
         """Set the RGB LED to a specific hex color."""
@@ -41,7 +40,7 @@ class RGB_LED:
         except ValueError:
             print("Invalid hex color format. Please use a hex string (e.g., '#FF00FF').")
 
-    def rainbow_cycle(self, wait=0.05):
+    def rainbow_cycle_sequence(self, wait=0.05):
         """Cycle through colors in a rainbow effect until stopped."""
         self.running = True
         position = 0  # Start at the beginning of the color wheel
@@ -53,11 +52,16 @@ class RGB_LED:
             t.sleep(wait)
             position += 1
 
+    def rainbow_cycle(self, wait=0.05):
+        """Start the rainbow cycle in a separate thread if not already running."""
+        if self.rainbow_thread is None or not self.rainbow_thread.is_alive():
+            self.rainbow_thread = threading.Thread(target=self.rainbow_cycle_sequence, args=(wait,))
+            self.rainbow_thread.start()
+
     def stop_rainbow_cycle(self):
         """Stop the rainbow cycle."""
         self.running = False
         self.off()
-
 
     @staticmethod
     def wheel(position=0):
@@ -72,6 +76,7 @@ class RGB_LED:
             return (0, position * 3, 255 - position * 3)
 
     def off(self):
+        """Turn off the RGB LED."""
         self.red_pwm.ChangeDutyCycle(0)
         self.green_pwm.ChangeDutyCycle(0)
         self.blue_pwm.ChangeDutyCycle(0)
@@ -82,4 +87,6 @@ class RGB_LED:
         self.red_pwm.stop()
         self.green_pwm.stop()
         self.blue_pwm.stop()
+        if self.rainbow_thread and self.rainbow_thread.is_alive():
+            self.rainbow_thread.join()
         GPIO.cleanup(self.red_pin, self.green_pin, self.blue_pin)
