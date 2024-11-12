@@ -5,7 +5,7 @@ import Adafruit_DHT as DHT
 
 GPIO.setmode(GPIO.BCM)
 
-class Heat_Sensor:
+class Temperature_Sensor:
     def __init__(self, out, sensor_type):
         """This uses GPIO pin-numbers on the pi."""
         self.out = out
@@ -34,14 +34,14 @@ class Heat_Sensor:
         else:
             return None
 
-class DHT11(Heat_Sensor):
+class DHT11(Temperature_Sensor):
     def __init__(self, out):
         super().__init__(out, DHT.DHT11)
 
-class DHT22(Heat_Sensor):
+class DHT22(Temperature_Sensor):
     def __init__(self, out):
         super().__init__(out, DHT.DHT22)
 
-class AM2302(Heat_Sensor):
+class AM2302(Temperature_Sensor):
     def __init__(self, out):
         super().__init__(out, DHT.AM2302)
