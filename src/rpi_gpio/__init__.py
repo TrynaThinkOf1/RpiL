@@ -6,6 +6,6 @@ from .buzzer import buzzer
 from .motor import motor
 from .pin import pin
 from .USDS import USDS
-from .Heat_Sensor import DHT11, DHT22, AM2302
+from .Temperature_Sensor import DHT11, DHT22, AM2302
 from .PIR import PIR
 from .IR import IR_Receiver, IR_LED
