@@ -2,7 +2,6 @@
 
 import RPi.GPIO as GPIO
 import time as t
-import threading
 
 GPIO.setmode(GPIO.BCM)
 
@@ -15,8 +14,6 @@ class USDS:
 
         GPIO.setup(self.trig, GPIO.OUT)
         GPIO.setup(self.echo, GPIO.IN)
-
-        self.distance_thread = None
 
     def distance(self):
         """Measures distance in cm"""

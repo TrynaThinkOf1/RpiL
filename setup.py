@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="RpiL",  # Package name
-    version="0.1.2",  # Version
+    version="0.1.3",  # Version
     packages=find_packages(where="src"),  # Automatically find packages in 'src'
     package_dir={"": "src"},  # Tell setuptools where your package is
-    install_requires=["RPi.GPIO"],  # List of dependencies (only external packages)
-    description="Library for controlling Raspberry Pi hardware. CAN ONLY BE INSTALLED ON RASPBERRY PI (due to Rpi.GPIO dependency).",
+    install_requires=["RPi.GPIO", "Adafruit_DHT"],  # List of dependencies (only external packages)
+    description="Library for controlling Raspberry Pi hardware. CAN ONLY BE INSTALLED ON RASPBERRY PI (due to dependancies).",
     author="Zevi Berlin",
     author_email="zeviberlin@gmail.com",
     license="MIT",  # Open source license
