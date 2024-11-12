@@ -7,3 +7,4 @@ from .motor import motor
 from .pin import pin
 from .USDS import USDS
 from .Heat_Sensor import DHT11, DHT22, AM2302
+from .PIR import PIR
