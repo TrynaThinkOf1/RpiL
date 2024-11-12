@@ -7,6 +7,7 @@ RpiL is a simple Python library for controlling Raspberry Pi hardware, particula
 - Supports various hardware components (LEDs, motors, sensors, motor drivers, RGB LEDs, buzzers, IR things, etc...)
 - Easy-to-understand API for quick integration
 - LIBRARY IS NOT INSTALLABLE ON ANYTHING OTHER THAN RASPBERRY PI DUE TO DEPENDANCIES SUCH AS RPi.GPIO
+  * This will be fixed soon, _I promise_
 
 ## Documentation
 - All detailed documentation, including installation and usage instructions, is available on the [GitHub Wiki](https://github.com/TrynaThinkOf1/RpiL/wiki).
