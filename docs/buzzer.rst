@@ -29,7 +29,6 @@ Here is a quick example:
 In this example, a `buzzer` object is created for GPIO pin 18. The example demonstrates turning the buzzer on, then off, and then starting a 5-second beep sequence. The `beep()` method toggles the buzzer on and off every 0.5 seconds during the sequence.
 
 Methods
--------
 
 * **on()**
     * Turns the buzzer on by setting the specified GPIO pin to HIGH.

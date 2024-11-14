@@ -28,12 +28,13 @@ setup(
     ],
     long_description="""
     RpiL is a Python library for controlling Raspberry Pi hardware.
+
     For detailed documentation, visit:
-    [Documentation](https://rpil.readthedocs.io)
+    `Documentation <https://rpil.readthedocs.io>`_
 
     The source code is available on GitHub:
-    [GitHub Repository](https://github.com/TrynaThinkOf1/RpiL)
+    `GitHub Repository <https://github.com/TrynaThinkOf1/RpiL>`_
     """,
-    long_description_content_type="text/markdown",  # Use Markdown for formatting
+    long_description_content_type="text/x-rst",  # Use reStructuredText
     url="https://rpil.readthedocs.io",  # This sets the URL field for the package
 )
