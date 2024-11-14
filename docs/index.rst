@@ -13,18 +13,18 @@ Contents
    :caption: Table of Contents:
 
    Installation
-   Pin Control
-   PWM (Pulse Width Modulation)
-   LED Control
-   CPU Temperature Monitoring
-   Buzzer Control
-   IR (Infrared) Sensors
-   Motor Control
-   Motor Driver Support
-   PIR (Passive Infrared) Sensors
-   RGB LED Control
-   Temperature Sensor Integration
-   Ultrasonic Distance Sensor (USDS)
+   pin
+   PWM
+   LED
+   CPU-Temperature
+   buzzer
+   IR
+   motor
+   Motor-Driver
+   PIR
+   RGB-LED
+   Temperature-Sensor
+   USDS
 
 Features
 --------
