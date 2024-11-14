@@ -12,7 +12,7 @@ The `PWM` class accepts three arguments:
 * **Duty Cycle**
     * An optional argument to set the PWM duty cycle, defaults to 50%.
 
-### Example
+Example
 
 Below is an example of using the `PWM` class:
 
@@ -34,7 +34,7 @@ Below is an example of using the `PWM` class:
 
 This example demonstrates how to initialize a GPIO pin for PWM, start the PWM signal, modify its duty cycle and frequency, and stop it.
 
-### Methods
+Methods
 
 * **start()**
     * Starts PWM on the specified pin with the current duty cycle.
@@ -48,11 +48,10 @@ This example demonstrates how to initialize a GPIO pin for PWM, start the PWM si
 * **stop()**
     * Stops the PWM signal on the specified pin.
 
-### Notes
+Notes
 * `start()` must be called before changing the duty cycle or frequency for the PWM effect to take place.
 * The class initializes and sets up the pin for output, and the `__del__` method cleans up the GPIO configuration.
 
 Cleanup
--------
 
 The `PWM` class automatically stops the PWM signal and cleans up the GPIO pin configuration when the instance is deleted.

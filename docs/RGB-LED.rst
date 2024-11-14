@@ -3,7 +3,7 @@ Controlling RGB LEDs with the RGB_LED Class
 
 The `RGB_LED` class in the `RpiL` library is designed to control an RGB LED using three GPIO pins. It provides methods for setting specific colors, cycling through a rainbow of colors, and turning the LED on or off.
 
-### Class Overview
+Class Overview
 
 The `RGB_LED` class requires three GPIO pin numbers as arguments:
 * **red_pin** - The GPIO pin connected to the red component of the RGB LED.
@@ -12,7 +12,7 @@ The `RGB_LED` class requires three GPIO pin numbers as arguments:
 
 PWM (Pulse Width Modulation) is used to control the brightness of each color component of the LED.
 
-### Methods
+Methods
 
 * **set_color(hex_color)**
     * Sets the RGB LED to a specific color based on a hex string (e.g., '#FF00FF').
@@ -32,7 +32,7 @@ PWM (Pulse Width Modulation) is used to control the brightness of each color com
 * **off()**
     * Turns off the RGB LED by setting all PWM duty cycles to 0.
 
-### Example Usage
+Example Usage
 
 Here’s how you can use the `RGB_LED` class to control an RGB LED:
 
@@ -52,12 +52,12 @@ Here’s how you can use the `RGB_LED` class to control an RGB LED:
 
     led.off()  # Turn off the LED
 
-### Notes
+Notes
 
 * This class uses PWM to control the brightness of each color component of the RGB LED. The duty cycle (0-100) corresponds to the brightness of the LED.
 * To create a smooth color transition, the `rainbow_cycle` method cycles through a range of colors. The `wheel` method generates the appropriate RGB values for each position.
 * The `set_color` method accepts a hex string, which is a standard format for representing colors (e.g., '#FF00FF' for purple).
 
-### Cleanup
+Cleanup
 
 The `RGB_LED` class automatically cleans up the GPIO pins when the object is deleted, ensuring proper release of the resources. If the rainbow cycle is running, it is also stopped before cleanup.

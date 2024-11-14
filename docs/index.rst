@@ -39,3 +39,9 @@ Getting Started
 ---------------
 
 Follow the installation guide to get started with RpiL, and explore the examples and features to control your Raspberry Pi and connected devices.
+
+External Links
+--------------
+
+- **GitHub Repository**: `https://github.com/TrynaThinkOf1/RpiL <https://github.com/TrynaThinkOf1/RpiL>`_
+- **PyPI Project Page**: `https://pypi.org/project/RpiL <https://pypi.org/project/RpiL>`_

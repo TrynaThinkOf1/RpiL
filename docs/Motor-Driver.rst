@@ -3,7 +3,7 @@ Motor Driver Control with the Motor_Driver Class
 
 The `Motor_Driver` class in the `RpiL` library is designed to control an L298N motor driver using GPIO pins on a Raspberry Pi. It provides methods for controlling the direction and speed of two motors connected to the motor driver.
 
-### Class Overview
+Class Overview
 
 The `Motor_Driver` class requires the following GPIO pin numbers for initialization:
 
@@ -16,7 +16,7 @@ The `Motor_Driver` class requires the following GPIO pin numbers for initializat
 
 PWM (Pulse Width Modulation) is used to control the speed of the motors connected to the driver.
 
-### Methods
+Methods
 
 * **forward(speed=90)**
     * Makes both motors move forward at the specified speed.
@@ -37,7 +37,7 @@ PWM (Pulse Width Modulation) is used to control the speed of the motors connecte
 * **stop()**
     * Stops both motors by turning off all control pins and stopping the PWM signals for ENA and ENB.
 
-### Example Usage
+Example Usage
 
 Here’s how you can use the `Motor_Driver` class to control a motor connected to an L298N motor driver:
 
@@ -56,13 +56,13 @@ Here’s how you can use the `Motor_Driver` class to control a motor connected t
 
     motor_driver.stop()  # Stop the motors
 
-### Notes
+Notes
 
 * The `Motor_Driver` class controls two motors, one for each side of the L298N motor driver. The motors are connected via the IN1, IN2, IN3, and IN4 pins. The ENA and ENB pins control the motor speed via PWM.
 * The speed is defined as a percentage (0-100), where 0 means no speed and 100 means full speed.
 * The directions are controlled by setting appropriate IN pins HIGH or LOW. The forward and backward methods set these pins accordingly to drive the motors in the desired direction.
 * The `turn_left` and `turn_right` methods are useful for differential steering, where one motor moves forward and the other moves backward.
 
-### Cleanup
+Cleanup
 
 The `Motor_Driver` class automatically cleans up the GPIO pins when the object is deleted, ensuring proper release of the resources and preventing potential conflicts with other GPIO tasks.

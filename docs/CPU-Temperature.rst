@@ -21,7 +21,6 @@ Here is an example of using the `CPU` class:
 In this example, the CPU temperature is retrieved in Celsius, Fahrenheit, and Kelvin.
 
 Methods
--------
 
 * **temperature(measure="C")**
     * Retrieves the current CPU temperature. The `measure` parameter accepts:
@@ -32,6 +31,5 @@ Methods
     If an unsupported unit is provided, this method raises a `ValueError`.
 
 Cleanup
--------
 
 The `CPU` class includes a destructor method (`__del__`) that clears the instance upon deletion.

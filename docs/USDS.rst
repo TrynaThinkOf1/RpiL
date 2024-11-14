@@ -3,7 +3,7 @@ Using the Ultra-Sonic Distance Sensor (USDS)
 
 The `USDS` class in the `RpiL` library is designed to measure distances using an ultrasonic sensor connected to the GPIO pins on a Raspberry Pi. This class calculates the distance based on the time delay between sending and receiving an ultrasonic pulse.
 
-### Class Overview
+Class Overview
 
 The `USDS` class requires two arguments:
 * **trig** - The GPIO pin connected to the Trigger pin of the ultrasonic sensor.
@@ -11,7 +11,7 @@ The `USDS` class requires two arguments:
 
 The sensor works by emitting an ultrasonic pulse from the trigger pin and measuring the time it takes for the echo to return. The `distance` method returns the calculated distance in centimeters.
 
-### Example Usage
+Example Usage
 
 Below is an example of using the `USDS` class to read distance data from an ultrasonic sensor:
 
@@ -32,18 +32,17 @@ Below is an example of using the `USDS` class to read distance data from an ultr
 
 This example sets up an ultrasonic sensor with trigger and echo pins on GPIO pins 23 and 24, respectively. It retrieves distance readings in a loop and prints them to the console.
 
-### Methods
+Methods
 
 * **distance()**
     * Sends an ultrasonic pulse, measures the time taken for the echo to return, and calculates the distance in centimeters.
     * Returns the measured distance as a float value.
 
-### Notes
+Notes
 
 * The `distance` method may return inaccurate values if there is interference or an object is too close or too far.
 * It is recommended to add a delay (e.g., 1 second) between calls to `distance` to allow for stable readings.
 
 Cleanup
--------
 
 The `USDS` class automatically cleans up the GPIO pin configuration upon deletion.

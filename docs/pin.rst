@@ -26,7 +26,6 @@ Here is an example of using the `pin` class:
 In this example, GPIO pin 17 is configured as an output, while GPIO pin 27 is configured as an input. The output pin can be toggled on and off, and the input pin’s value is read.
 
 Methods
--------
 
 * **on()**
     * Sets the output pin to high (on). Only works if the pin is configured as an output.
@@ -43,12 +42,10 @@ Methods
         - Raises an error if called on an output pin.
 
 Notes
------
 
 * The `toggle` and `value` methods are mode-dependent. They function only if the pin is configured in the appropriate mode (`OUT` for toggle, `IN` for value).
 * The class initializes the GPIO setup for the specified pin and mode.
 
 Cleanup
--------
 
 The `pin` class destructor cleans up the GPIO configuration when the instance is deleted.

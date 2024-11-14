@@ -26,7 +26,6 @@ Here is an example of using the `LED` class:
 This example sets up an LED on GPIO pin 18, turns it on, turns it off, and then blinks it for 10 seconds.
 
 Methods
--------
 
 * **on()**
     * Turns the LED on.
@@ -44,12 +43,10 @@ Methods
     * The internal method responsible for blinking the LED by turning it on and off in half-second intervals.
 
 Notes
------
 
 * The `blink` method initiates a separate thread for non-blocking operation, allowing the LED to blink while other processes continue.
 * The `__del__` method ensures that the LED is turned off and the GPIO pin is cleaned up when the `LED` instance is deleted.
 
 Cleanup
--------
 
 The class destructor (`__del__`) turns the LED off, waits for any active blink thread to finish, and cleans up the GPIO pin.

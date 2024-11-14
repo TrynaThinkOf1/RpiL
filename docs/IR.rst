@@ -33,7 +33,6 @@ Here is an example of using `IR_Receiver`:
 This example sets up an IR receiver on GPIO pin 17, which reads and prints the received signal when one is detected.
 
 IR Receiver Methods
-~~~~~~~~~~~~~~~~~~~
 
 * **read_signal(protocol="NEC")**
     * Reads the IR signal and decodes it based on the specified protocol (default is "NEC").
@@ -66,7 +65,6 @@ Here is an example of using `IR_LED`:
 In this example, an IR LED is created on GPIO pin 27 and used to send an IR signal with a specified hex code.
 
 IR LED Methods
-~~~~~~~~~~~~~~
 
 * **send_signal(hex_code, protocol="NEC", frequency=38000)**
     * Sends an IR signal using the specified protocol (default is NEC) and frequency.
@@ -75,12 +73,10 @@ IR LED Methods
     * Sends NEC-formatted binary data as an IR signal, using the specified frequency in Hz.
 
 Notes
------
 
 Both `IR_Receiver` and `IR_LED` classes require the `pigpio` daemon to be running on the Raspberry Pi to control the IR hardware.
 
 Cleanup
--------
 
 Both classes have a destructor method (`__del__`) that stops the `pigpio` connection and cleans up the specified GPIO pin.
 

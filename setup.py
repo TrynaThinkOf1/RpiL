@@ -18,7 +18,7 @@ setup(
     extras_require={
         "rpi": raspberry_pi_deps  # Raspberry Pi-specific dependencies
     },
-    description="Library for controlling Raspberry Pi hardware. Documentation at rpil.readthedocs.io",
+    description="Library for controlling Raspberry Pi hardware.",
     author="Zevi Berlin",
     author_email="zeviberlin@gmail.com",
     license="MIT",
@@ -26,4 +26,14 @@ setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
     ],
+    long_description="""
+    RpiL is a Python library for controlling Raspberry Pi hardware.
+    For detailed documentation, visit:
+    [Documentation](https://rpil.readthedocs.io)
+
+    The source code is available on GitHub:
+    [GitHub Repository](https://github.com/TrynaThinkOf1/RpiL)
+    """,
+    long_description_content_type="text/markdown",  # Use Markdown for formatting
+    url="https://rpil.readthedocs.io",  # This sets the URL field for the package
 )
