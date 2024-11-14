@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 raspberry_pi_deps = [
     "RPi.GPIO",
     "Adafruit_DHT"
-]
+] #random
 
 setup(
     name="RpiL",
