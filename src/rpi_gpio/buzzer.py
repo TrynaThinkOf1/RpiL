@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BCM)
 
 class buzzer:
     """This uses GPIO pin-number on the pi.\n
-    This class is for controlling basic Piezo-Buzzers."""
+    This class is for controlling basic Piezo Buzzers."""
     def __init__(self, pin):
         self.pin = pin
 
