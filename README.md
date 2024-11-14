@@ -12,7 +12,7 @@ RpiL is a simple Python library for controlling Raspberry Pi hardware, particula
 - Easy-to-understand API for quick integration
 
 ## Documentation
-- All detailed documentation, including installation and usage instructions, is available on the [GitHub Wiki](https://github.com/TrynaThinkOf1/RpiL/wiki).
+- All detailed documentation, including installation and usage instructions, is available on the [readthedocs](https://rpil.readthedocs.io/en/latest/).
 
 ## License
 This project is licensed under the MIT License.
