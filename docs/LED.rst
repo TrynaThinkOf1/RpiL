@@ -1,37 +1,55 @@
-How to control an LED
+How to Control an LED
 ======================
 
-The class accepts one argument:
+The `LED` class in the `RpiL` library provides basic control for an LED connected to a Raspberry Pi GPIO pin. This class allows turning the LED on and off, toggling its state, and blinking it with a specified duration.
 
-* Pin Number
-    * The Broadcom GPIO pin number
+The `LED` class accepts one argument:
 
-***
+* **Pin Number**
+    * The Broadcom GPIO pin number connected to the LED.
 
-Here is a quick example:
+Here is an example of using the `LED` class:
 
 .. code-block:: Python
 
-    from RpiL import LED  # import the 'LED' class from RpiL library
+    from RpiL import LED
     import time
 
-    led1 = LED(19)  # set up a new LED
+    led = LED(18)  # Create an LED instance on GPIO pin 18
 
-    led1.on()
-    time.sleep(1)
-    led1.off()
-    time.sleep(2)
-    led1.toggle()
-    time.sleep(1)
-    led1.blink(10)  # this accepts one argument for duration of the blinking sequence, this defaults to 6 more on duration below
+    led.on()       # Turn the LED on
+    time.sleep(2)  # Wait for 2 seconds
+    led.off()      # Turn the LED off
+    time.sleep(1)  # Wait for 1 second
+    led.blink(10)  # Blink the LED for 10 seconds
 
-***
+This example sets up an LED on GPIO pin 18, turns it on, turns it off, and then blinks it for 10 seconds.
 
-Duration of blinking:
-----------------------
+Methods
+-------
 
-* The duration is how many times the LED will turn on and off in total
-    * The LED will turn on for 0.5 seconds, and turn off for 0.5 seconds
-* This might get changed to allow customization of how long the LED is on/off for
+* **on()**
+    * Turns the LED on.
 
-That example would set up an LED on GPIO #19, turn the LED on, wait 1 second, turn the LED off, wait 2 seconds, toggle the LED (if it's off, turn it on, and vice versa), then wait 1 second, and finally, it will enter a blinking function for 10 seconds.
+* **off()**
+    * Turns the LED off.
+
+* **toggle()**
+    * Toggles the LED's state. If it is on, it turns off; if it is off, it turns on.
+
+* **blink(duration=6)**
+    * Blinks the LED in a non-blocking manner for the specified duration (default is 6 seconds). This method uses a separate thread to allow other code to run while the LED blinks.
+
+* **blink_sequence(duration=6)**
+    * The internal method responsible for blinking the LED by turning it on and off in half-second intervals.
+
+Notes
+-----
+
+* The `blink` method initiates a separate thread for non-blocking operation, allowing the LED to blink while other processes continue.
+* The `__del__` method ensures that the LED is turned off and the GPIO pin is cleaned up when the `LED` instance is deleted.
+
+Cleanup
+-------
+
+The class destructor (`__del__`) turns the LED off, waits for any active blink thread to finish, and cleans up the GPIO pin.

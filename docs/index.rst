@@ -15,7 +15,17 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
+   Installation
    pin
    PWM
    LED
+   CPU-Temperature
+   buzzer
+   IR
+   motor
+   Motor-Driver
+   PIR
+   RGB-LED
+   Temperature-Sensor
+   USDS
 
