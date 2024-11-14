@@ -1,4 +1,5 @@
 # RpiL - Raspberry Pi Library
+#### By Zevi Berlin
 
 RpiL is a simple Python library for controlling Raspberry Pi hardware, particularly GPIO pins. It provides an easy-to-use interface for interacting with various hardware components like motors, LEDs, and sensors. The library is designed to streamline GPIO operations, making it ideal for both beginners and advanced users working on Raspberry Pi projects.
 
