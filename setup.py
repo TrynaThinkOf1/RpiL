@@ -18,7 +18,7 @@ setup(
     extras_require={
         "rpi": raspberry_pi_deps  # Raspberry Pi-specific dependencies
     },
-    description="Library for controlling Raspberry Pi hardware.",
+    description="Library for controlling Raspberry Pi hardware. Documentation at rpil.readthedocs.io",
     author="Zevi Berlin",
     author_email="zeviberlin@gmail.com",
     license="MIT",
