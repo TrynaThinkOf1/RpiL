@@ -8,7 +8,7 @@ raspberry_pi_deps = [
 
 setup(
     name="RpiL",
-    version="0.2.1",
+    version="0.2.2",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
